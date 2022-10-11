@@ -13,7 +13,7 @@ export const fetchAllTodos = (): ThunkAction<
   unknown,
   AnyAction
 > => {
-  return async (dispatch, getState) => {
+  return async (dispatch) => {
     const response: ITodoItem[] = await todoService.fetchAllTodos();
 
     dispatch(todoActions.setTodoItems(response));

@@ -5,6 +5,15 @@
   border-radius: 20px;
   background: #F5F5F5;
 }
+.todoListHeader{
+  display:flex;
+  justify-content: space-between;
+}
+.todoListTitle{
+  font-size: 24px;
+  color: #000;
+  font-weight: 500;
+}
 
 @media (min-width: 768px) {
   .container{

@@ -1,8 +1,9 @@
 import { ITodoItem, ITodoListState } from "../models";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: ITodoListState = {
-  todoItems: []
+  todoItems: [],
 };
 
 const todoSlice = createSlice({
@@ -16,11 +17,15 @@ const todoSlice = createSlice({
       state.todoItems.push(action.payload);
     },
     editTodoItem(state, action: PayloadAction<ITodoItem>) {
-      const itemIndex = state.todoItems.findIndex(item => item.id == action.payload.id);
+      const itemIndex = state.todoItems.findIndex(
+        (item) => item.id == action.payload.id
+      );
       state.todoItems.splice(itemIndex, 1, action.payload);
     },
     removeTodoItem(state, action: PayloadAction<string>) {
-      state.todoItems = state.todoItems.filter(item=>item.id != action.payload);
+      state.todoItems = state.todoItems.filter(
+        (item) => item.id != action.payload
+      );
     },
   },
 });

@@ -1,0 +1,38 @@
+.progressContainer{
+  background: #E07C7C;
+  padding: 18px;
+  padding-bottom: 25px;
+  border-radius: 20px;
+  text-align: left;
+}
+
+.progressTitle{
+  font-size: 28px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.progressDescription{
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 12.6px;
+  color:#EBB9B8;
+}
+
+.progressRail{
+  width:100%;
+  position: relative;
+  background: #3B3B3B;
+  height: 7.34px;
+  border-radius: 100px;
+}
+
+.progressTrack{
+  position: absolute;
+  height: 7.34px;
+  background: white;
+  left: 0px;
+  top: 0px;
+  border-radius: 100px;
+}

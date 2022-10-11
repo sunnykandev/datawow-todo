@@ -1,7 +1,17 @@
 .container {
   margin: auto;
   margin-top: 42px;
-  max-width: 720px;
+  width: 100%;
   border-radius: 20px;
   background: #F5F5F5;
+}
+
+@media (min-width: 768px) {
+  .container{
+    width: 720px;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-top: 62px;
+    padding-bottom: 62px;
+  }
 }

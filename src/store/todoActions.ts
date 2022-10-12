@@ -19,3 +19,11 @@ export const fetchAllTodos = (): ThunkAction<
     dispatch(todoActions.setTodoItems(response));
   };
 };
+
+export const removeTodoItem = (id: string) => {
+  return todoActions.removeTodoItem(id);
+};
+
+export const editTodoItem = (task: ITodoItem) => {
+  return todoActions.editTodoItem(task);
+};

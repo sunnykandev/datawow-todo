@@ -4,15 +4,23 @@
   width: 100%;
   border-radius: 20px;
   background: #F5F5F5;
+  box-sizing: border-box;
 }
 .todoListHeader{
+  margin-top: 33px;
   display:flex;
   justify-content: space-between;
+}
+.spacer{
+  flex: 1;
 }
 .todoListTitle{
   font-size: 24px;
   color: #000;
   font-weight: 500;
+}
+.taskListContainer{
+  padding-top: 16px;
 }
 
 @media (min-width: 768px) {

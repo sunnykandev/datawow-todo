@@ -1,0 +1,13 @@
+.selectedItem{
+  background: #585292;
+  border-radius: 10px;
+  padding: 5px 8px;
+  color: white;
+}
+.option{
+  padding: 5px 8px;
+  border-radius: 10px;
+}
+.option:hover{
+  background: #ddd;
+}

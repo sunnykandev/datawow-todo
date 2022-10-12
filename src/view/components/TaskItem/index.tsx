@@ -28,6 +28,14 @@ export default function TaskItem({
     setIsEditing(false);
   };
 
+  const handleCheck = () => {
+    onEdit({ ...task, completed: true });
+  };
+
+  const handleUncheck = () => {
+    onEdit({ ...task, completed: false });
+  };
+
   return (
     <>
       {isEditing ? (
@@ -43,7 +51,17 @@ export default function TaskItem({
         </div>
       ) : (
         <div className={styles.taskItemContainer}>
-          <MdCheckBox className={styles.taskItemCheckbox} />
+          {task.completed ? (
+            <MdCheckBox
+              onClick={handleUncheck}
+              className={styles.taskItemCheckbox}
+            />
+          ) : (
+            <MdCheckBoxOutlineBlank
+              onClick={handleCheck}
+              className={styles.taskItemCheckbox}
+            />
+          )}
           <div className={styles.taskItemContent}>{task.title}</div>
           <TaskItemMenuBtn
             onEdit={() => setIsEditing(true)}

@@ -50,14 +50,19 @@ export default function TodoList() {
         <CustomSelect value={filter} handleChange={setFilter} />
       </div>
       <div className={styles.taskListContainer}>
-        {allTodos.map((task) => (
-          <TaskItem
-            key={task.id}
-            task={task}
-            onDelete={handleDelete}
-            onEdit={handleEdit}
-          />
-        ))}
+        {allTodos.map(
+          (task) =>
+            (filter == "All" ||
+              (filter == "Done" && task.completed) ||
+              (filter == "Undone" && !task.completed)) && (
+              <TaskItem
+                key={task.id}
+                task={task}
+                onDelete={handleDelete}
+                onEdit={handleEdit}
+              />
+            )
+        )}
       </div>
       <div>
         <AddTaskBox onAdd={handleAdd} />

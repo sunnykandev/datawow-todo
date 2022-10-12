@@ -6,4 +6,5 @@ export interface ITodoItem {
 
 export interface ITodoListState {
   todoItems: ITodoItem[];
+  error: string;
 }

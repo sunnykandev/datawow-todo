@@ -4,12 +4,16 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: ITodoListState = {
   todoItems: [],
+  error: "",
 };
 
 const todoSlice = createSlice({
   name: "todo",
   initialState: initialState,
   reducers: {
+    setError(state, action: PayloadAction<string>) {
+      state.error = action.payload;
+    },
     setTodoItems(state, action: PayloadAction<ITodoItem[]>) {
       state.todoItems = action.payload;
     },

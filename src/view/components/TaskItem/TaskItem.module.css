@@ -43,6 +43,7 @@
 }
 .taskItemCheckbox{
   color:#585292 !important;
+  cursor: pointer;
 }
 .menuButtonContainer{
   position:relative;

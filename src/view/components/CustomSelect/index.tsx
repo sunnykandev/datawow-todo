@@ -68,7 +68,6 @@ export default function CustomSelect({ value, handleChange }: SelectBoxProps) {
   const toggling = () => setIsOpen(!isOpen);
 
   const onOptionClicked = (val: string) => () => {
-    console.log(val);
     setSelectedOption(val);
     setIsOpen(false);
     handleChange(val);

@@ -24,16 +24,31 @@ export const addTask = (
   title: string
 ): ThunkAction<void, RootState, unknown, AnyAction> => {
   return async (dispatch) => {
-    const response: ITodoItem = await todoService.addTask({ title: title });
+    const response: ITodoItem = await todoService.addTask({
+      title: title,
+      completed: false,
+    });
 
     dispatch(todoActions.addTodoItem(response));
   };
 };
 
-export const removeTodoItem = (id: string) => {
-  return todoActions.removeTodoItem(id);
+export const removeTodoItem = (
+  id: string
+): ThunkAction<void, RootState, unknown, AnyAction> => {
+  return async (dispatch) => {
+    const response = await todoService.removeTask(id);
+    if (response.status == 200) {
+      dispatch(todoActions.removeTodoItem(id));
+    }
+  };
 };
 
-export const editTodoItem = (task: ITodoItem) => {
-  return todoActions.editTodoItem(task);
+export const editTodoItem = (
+  task: ITodoItem
+): ThunkAction<void, RootState, unknown, AnyAction> => {
+  return async (dispatch) => {
+    const response: ITodoItem = await todoService.editTask(task);
+    dispatch(todoActions.editTodoItem(response));
+  };
 };

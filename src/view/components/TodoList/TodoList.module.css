@@ -5,6 +5,7 @@
   border-radius: 20px;
   background: #F5F5F5;
   box-sizing: border-box;
+  padding: 15px;
 }
 .todoListHeader{
   margin-top: 33px;

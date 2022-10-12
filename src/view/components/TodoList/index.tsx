@@ -6,6 +6,7 @@ import {
   fetchAllTodos,
   editTodoItem,
   removeTodoItem,
+  addTask,
 } from "../../../store/todoActions";
 import styles from "./TodoList.module.css";
 
@@ -13,6 +14,7 @@ import { ITodoItem } from "../../../models";
 import Progress from "../Progress";
 import CustomSelect from "../CustomSelect";
 import TaskItem from "../TaskItem";
+import AddTaskBox from "../AddTaskBox";
 
 export default function TodoList() {
   const dispatch = useAppDispatch();
@@ -26,6 +28,10 @@ export default function TodoList() {
 
   const handleEdit = (task: ITodoItem) => {
     dispatch(editTodoItem(task));
+  };
+
+  const handleAdd = (title: string) => {
+    dispatch(addTask(title));
   };
 
   React.useEffect(() => {
@@ -52,6 +58,9 @@ export default function TodoList() {
             onEdit={handleEdit}
           />
         ))}
+      </div>
+      <div>
+        <AddTaskBox onAdd={handleAdd} />
       </div>
     </div>
   );

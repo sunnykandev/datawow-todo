@@ -20,6 +20,16 @@ export const fetchAllTodos = (): ThunkAction<
   };
 };
 
+export const addTask = (
+  title: string
+): ThunkAction<void, RootState, unknown, AnyAction> => {
+  return async (dispatch) => {
+    const response: ITodoItem = await todoService.addTask({ title: title });
+
+    dispatch(todoActions.addTodoItem(response));
+  };
+};
+
 export const removeTodoItem = (id: string) => {
   return todoActions.removeTodoItem(id);
 };

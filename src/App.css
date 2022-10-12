@@ -21,6 +21,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   background: #D1D0D9;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .App-link {

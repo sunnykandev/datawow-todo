@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import { useAppSelector, useAppDispatch } from "../../../hooks/reduxHooks";
 import {
@@ -9,6 +9,7 @@ import {
   addTask,
 } from "../../../store/todoActions";
 import styles from "./TodoList.module.css";
+import "./todoListAnimation.css";
 
 import { ITodoItem } from "../../../models";
 import Progress from "../Progress";
@@ -50,19 +51,23 @@ export default function TodoList() {
         <CustomSelect value={filter} handleChange={setFilter} />
       </div>
       <div className={styles.taskListContainer}>
-        {allTodos.map(
-          (task) =>
-            (filter == "All" ||
-              (filter == "Done" && task.completed) ||
-              (filter == "Undone" && !task.completed)) && (
-              <TaskItem
-                key={task.id}
-                task={task}
-                onDelete={handleDelete}
-                onEdit={handleEdit}
-              />
-            )
-        )}
+        <TransitionGroup component="div">
+          {allTodos.map(
+            (task) =>
+              (filter == "All" ||
+                (filter == "Done" && task.completed) ||
+                (filter == "Undone" && !task.completed)) && (
+                <CSSTransition timeout={500} classNames="fade" key={task.id}>
+                  <TaskItem
+                    key={task.id}
+                    task={task}
+                    onDelete={handleDelete}
+                    onEdit={handleEdit}
+                  />
+                </CSSTransition>
+              )
+          )}
+        </TransitionGroup>
       </div>
       <div>
         <AddTaskBox onAdd={handleAdd} />

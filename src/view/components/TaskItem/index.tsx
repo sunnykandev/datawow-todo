@@ -1,15 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MdCheckBoxOutlineBlank, MdCheckBox } from "react-icons/md";
 
-import { useAppSelector, useAppDispatch } from "../../../hooks/reduxHooks";
-import { fetchAllTodos } from "../../../store/todoActions";
-
 import { ITodoItem } from "../../../models";
-import styles from "./TaskItem.module.css";
-
-import Progress from "../Progress";
-import CustomSelect from "../CustomSelect";
 import TaskItemMenuBtn from "./TaskItemMenuButton";
+import styles from "./TaskItem.module.css";
 
 export default function TaskItem({
   task,

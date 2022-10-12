@@ -3,7 +3,6 @@ import { BsThreeDots } from "react-icons/bs";
 
 import styles from "./TaskItem.module.css";
 
-const sampleData = new Array(7).fill("item name");
 const TaskItemMenuButton = ({
   onEdit,
   onDelete,
@@ -12,14 +11,13 @@ const TaskItemMenuButton = ({
   onDelete: () => void;
 }) => {
   const [open, setOpen] = React.useState(false);
-  const drop: React.MutableRefObject<any> = React.useRef(null);
   const handleMenuClick = (e: React.SyntheticEvent) => {
     e.stopPropagation();
     setOpen(false);
   };
 
   return (
-    <div className={styles.menuButtonContainer} ref={drop}>
+    <div className={styles.menuButtonContainer}>
       <button
         onBlur={() => setOpen(false)}
         onClick={() => setOpen(!open)}

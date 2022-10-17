@@ -14,6 +14,9 @@ This is a test project for Data Wow Frontend Engineer Application.
 
 ## Getting Started
 
+First run the json server on your local
+(https://github.com/datawowio/todos-json-server).
+
 Check code quality with:
 
 ```bash

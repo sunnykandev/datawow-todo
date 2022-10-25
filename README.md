@@ -1,8 +1,6 @@
 
 ## Todo List with React, Redux-toolkit, Typescript, Axios
 
-This is a test project for Data Wow Frontend Engineer Application.
-
 ### The application is set up with the following features.
 
 - Add task
